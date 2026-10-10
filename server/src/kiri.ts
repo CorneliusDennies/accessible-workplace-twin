@@ -41,7 +41,7 @@ export async function uploadFramesToKiri(framePaths: string[]): Promise<string> 
     maxContentLength: Infinity,
   });
 
-  if (res.data?.code !== 0 || !res.data?.data?.serialize) {
+  if (!res.data?.ok || !res.data?.data?.serialize) {
     throw new Error(`KIRI upload failed: ${JSON.stringify(res.data)}`);
   }
 
@@ -54,7 +54,7 @@ export async function getKiriStatus(serialize: string): Promise<KiriStatus> {
     params: { serialize },
   });
 
-  if (res.data?.code !== 0) {
+  if (!res.data?.ok) {
     throw new Error(`KIRI status check failed: ${JSON.stringify(res.data)}`);
   }
 
@@ -67,7 +67,7 @@ export async function getKiriModelZipUrl(serialize: string): Promise<string> {
     params: { serialize },
   });
 
-  if (res.data?.code !== 0 || !res.data?.data?.modelUrl) {
+  if (!res.data?.ok || !res.data?.data?.modelUrl) {
     throw new Error(`KIRI model fetch failed: ${JSON.stringify(res.data)}`);
   }
 

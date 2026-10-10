@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { Bounds, OrbitControls } from '@react-three/drei';
 import type { OfficeData, Fix } from '../types';
 import { OfficeModel } from './OfficeModel';
 import { FixMarkers } from './FixMarkers';
@@ -20,7 +20,9 @@ export function Scene({ officeData, fixes, showFixes, scannedGlbUrl }: SceneProp
       <directionalLight position={[8, 12, 6]} intensity={1} castShadow />
       {scannedGlbUrl ? (
         <Suspense fallback={null}>
-          <ScannedOfficeModel glbUrl={scannedGlbUrl} />
+          <Bounds fit clip observe margin={1.2}>
+            <ScannedOfficeModel glbUrl={scannedGlbUrl} />
+          </Bounds>
         </Suspense>
       ) : (
         <OfficeModel officeData={officeData} />
