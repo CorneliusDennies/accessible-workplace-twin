@@ -7,4 +7,7 @@ export const colors = {
   tactilePaving: '#f2c230',
   brailleSignage: '#f5f5f5',
   contrastStrip: '#ffe347',
+  wheelchairRamp: '#4a7fc1',
+  doorWidening: '#c7e8f5',
+  clearFloorMarking: '#3fae6a',
 };

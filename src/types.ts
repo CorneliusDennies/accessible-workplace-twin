@@ -47,7 +47,13 @@ export interface OfficeData {
 
 export type Severity = 'low' | 'medium' | 'high';
 
-export type IssueType = 'missingTactileWarning' | 'missingSignage' | 'missingContrastStrip';
+export type IssueType =
+  | 'missingTactileWarning'
+  | 'missingSignage'
+  | 'missingContrastStrip'
+  | 'noAccessibleAlternative'
+  | 'narrowPath'
+  | 'narrowDoorway';
 
 export interface Issue {
   id: string;
@@ -60,7 +66,13 @@ export interface Issue {
   standardReference: string;
 }
 
-export type FixType = 'tactilePaving' | 'brailleSignage' | 'contrastStrip';
+export type FixType =
+  | 'tactilePaving'
+  | 'brailleSignage'
+  | 'contrastStrip'
+  | 'wheelchairRamp'
+  | 'doorWidening'
+  | 'clearFloorMarking';
 
 export interface Product {
   sku: string;
