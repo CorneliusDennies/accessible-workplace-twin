@@ -13,6 +13,7 @@ interface Door {
   roomId: string;
   position: Vec3;
   width: number;
+  horizontal?: boolean;
 }
 interface Obstacle {
   id: string;
@@ -47,6 +48,44 @@ function makeId(prefix: string) {
   return `${prefix}-${nextId++}`;
 }
 
+interface Point2D {
+  x: number;
+  z: number;
+}
+
+// Snaps a point onto the nearest wall's line (so doors don't float disconnected from any wall).
+// Mirrors src/utils/wallGeometry.ts — kept as a local copy for the same rootDir reason as above.
+function findNearestWall(
+  point: Point2D,
+  walls: Wall[],
+  maxDistance = 1.5
+): { point: Point2D; horizontal: boolean } | null {
+  let best: { point: Point2D; distance: number; horizontal: boolean } | null = null;
+  for (const wall of walls) {
+    const [sx, , sz] = wall.size;
+    const horizontal = sx >= sz;
+    const half = (horizontal ? sx : sz) / 2;
+    const a = horizontal
+      ? { x: wall.position[0] - half, z: wall.position[2] }
+      : { x: wall.position[0], z: wall.position[2] - half };
+    const b = horizontal
+      ? { x: wall.position[0] + half, z: wall.position[2] }
+      : { x: wall.position[0], z: wall.position[2] + half };
+    const dx = b.x - a.x;
+    const dz = b.z - a.z;
+    const lengthSq = dx * dx + dz * dz;
+    let t = lengthSq === 0 ? 0 : ((point.x - a.x) * dx + (point.z - a.z) * dz) / lengthSq;
+    t = Math.max(0, Math.min(1, t));
+    const projX = a.x + t * dx;
+    const projZ = a.z + t * dz;
+    const distance = Math.hypot(point.x - projX, point.z - projZ);
+    if (!best || distance < best.distance) {
+      best = { point: { x: projX, z: projZ }, distance, horizontal };
+    }
+  }
+  return best && best.distance <= maxDistance ? { point: best.point, horizontal: best.horizontal } : null;
+}
+
 export function convertFloorPlanToOfficeData(plan: SimpleFloorPlan): OfficeData {
   const walls: Wall[] = plan.walls.map((w) => {
     const length = Math.max(0.1, Math.hypot(w.x2 - w.x1, w.z2 - w.z1));
@@ -60,12 +99,17 @@ export function convertFloorPlanToOfficeData(plan: SimpleFloorPlan): OfficeData 
     };
   });
 
-  const doors: Door[] = plan.doors.map((d) => ({
-    id: makeId('door'),
-    roomId: '',
-    position: [d.x, 0, d.z],
-    width: 1,
-  }));
+  const doors: Door[] = plan.doors.map((d) => {
+    const snapped = findNearestWall({ x: d.x, z: d.z }, walls);
+    const dp = snapped ? snapped.point : { x: d.x, z: d.z };
+    return {
+      id: makeId('door'),
+      roomId: '',
+      position: [dp.x, 0, dp.z],
+      width: 1,
+      horizontal: snapped ? snapped.horizontal : true,
+    };
+  });
 
   const stairs: Stairs[] = plan.stairs.map((s) => ({
     id: makeId('stairs'),

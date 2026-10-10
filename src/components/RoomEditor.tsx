@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { OfficeData, Wall, Door, Obstacle, Stairs, Vec3 } from '../types';
+import { findNearestWall } from '../utils/wallGeometry';
 
 interface RoomEditorProps {
   initialOfficeData: OfficeData;
@@ -103,7 +104,18 @@ export function RoomEditor({ initialOfficeData, onApply, onCancel }: RoomEditorP
     }
 
     if (tool === 'door') {
-      setDoors((d) => [...d, { id: makeId('door'), roomId: '', position: [point.x, 0, point.z], width: 1 }]);
+      const snapped = findNearestWall(point, walls);
+      const dp = snapped ? snapped.point : point;
+      setDoors((d) => [
+        ...d,
+        {
+          id: makeId('door'),
+          roomId: '',
+          position: [dp.x, 0, dp.z],
+          width: 1,
+          horizontal: snapped ? snapped.horizontal : true,
+        },
+      ]);
       return;
     }
 

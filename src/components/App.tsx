@@ -11,6 +11,7 @@ import { ScanUpload } from './ScanUpload';
 import { FloorPlanUpload } from './FloorPlanUpload';
 import { RoomEditor } from './RoomEditor';
 import { TagToolbar } from './TagToolbar';
+import { findNearestWall } from '../utils/wallGeometry';
 import { SCAN_API_BASE_URL } from '../config';
 import './App.css';
 
@@ -47,10 +48,23 @@ function App() {
     if (!tagTool || tagTool === 'erase') return;
 
     if (tagTool === 'door') {
-      setOfficeData((d) => ({
-        ...d,
-        doors: [...d.doors, { id: makeTagId('tag-door'), roomId: '', position: [x, 0, z], width: 1 }],
-      }));
+      setOfficeData((d) => {
+        const snapped = findNearestWall({ x, z }, d.walls);
+        const dp = snapped ? snapped.point : { x, z };
+        return {
+          ...d,
+          doors: [
+            ...d.doors,
+            {
+              id: makeTagId('tag-door'),
+              roomId: '',
+              position: [dp.x, 0, dp.z],
+              width: 1,
+              horizontal: snapped ? snapped.horizontal : true,
+            },
+          ],
+        };
+      });
     } else if (tagTool === 'stairs') {
       setOfficeData((d) => ({
         ...d,

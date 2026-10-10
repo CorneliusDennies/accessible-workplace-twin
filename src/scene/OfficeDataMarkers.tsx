@@ -20,16 +20,25 @@ export function OfficeDataMarkers({ officeData, eraseMode, onErase }: OfficeData
 
   return (
     <group>
-      {officeData.doors.map((door) => (
-        <mesh
-          key={door.id}
-          position={[door.position[0], 1, door.position[2]]}
-          onClick={eraseHandler('door', door.id)}
-        >
-          <boxGeometry args={[door.width, 2, 0.1]} />
-          <meshStandardMaterial color={colors.door} />
-        </mesh>
-      ))}
+      {officeData.doors.map((door) => {
+        const horizontal = door.horizontal ?? true;
+        // Thicker than a wall (0.2) so the panel pokes out on both faces instead of being
+        // swallowed inside the wall volume when snapped exactly onto its centerline.
+        const DOOR_THICKNESS = 0.3;
+        const size: [number, number, number] = horizontal
+          ? [door.width, 2, DOOR_THICKNESS]
+          : [DOOR_THICKNESS, 2, door.width];
+        return (
+          <mesh
+            key={door.id}
+            position={[door.position[0], 1, door.position[2]]}
+            onClick={eraseHandler('door', door.id)}
+          >
+            <boxGeometry args={size} />
+            <meshStandardMaterial color={colors.door} />
+          </mesh>
+        );
+      })}
 
       {officeData.obstacles.map((obstacle) => (
         <mesh key={obstacle.id} position={obstacle.position} onClick={eraseHandler('obstacle', obstacle.id)}>

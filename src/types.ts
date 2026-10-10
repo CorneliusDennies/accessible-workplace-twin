@@ -18,6 +18,8 @@ export interface Door {
   roomId: string;
   position: Vec3;
   width: number;
+  /** Orientation of the wall this door sits in (true = runs along X, false = runs along Z). Defaults to true if omitted. */
+  horizontal?: boolean;
 }
 
 export interface Obstacle {
