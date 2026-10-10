@@ -57,7 +57,9 @@ export function FloorPlanUpload({ onParsed }: FloorPlanUploadProps) {
       {state.phase === 'idle' && (
         <button onClick={() => fileInputRef.current?.click()}>Upload floor plan image</button>
       )}
-      {state.phase === 'parsing' && <p>Reading the floor plan...</p>}
+      {state.phase === 'parsing' && (
+        <p>Reading the floor plan... (will retry automatically if the model is briefly overloaded)</p>
+      )}
       {state.phase === 'done' && (
         <>
           <p>Imported — opened in the layout editor for review.</p>

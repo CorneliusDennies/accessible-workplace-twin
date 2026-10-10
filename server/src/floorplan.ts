@@ -1,4 +1,4 @@
-import { GoogleGenAI } from '@google/genai';
+import { ApiError, GoogleGenAI } from '@google/genai';
 
 export interface SimpleWall {
   x1: number;
@@ -93,30 +93,60 @@ function getClient(): GoogleGenAI {
   return new GoogleGenAI({ apiKey });
 }
 
+const RETRYABLE_STATUSES = new Set([429, 500, 503, 504]);
+const MAX_ATTEMPTS = 4;
+const BASE_DELAY_MS = 1000;
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryable(err: unknown): boolean {
+  return err instanceof ApiError && RETRYABLE_STATUSES.has(err.status);
+}
+
 export async function parseFloorPlanImage(imageBase64: string, mediaType: string): Promise<SimpleFloorPlan> {
   const ai = getClient();
 
-  const response = await ai.models.generateContent({
-    model: 'gemini-flash-latest',
-    contents: [
-      {
-        text:
-          'This is a top-down floor plan (a photo or scan of a drawn/printed plan). Extract its geometry: ' +
-          'every wall as a line segment, every door as a point, every staircase and large fixed obstacle as a ' +
-          'bounding box. Pick a sensible real-world scale in meters (use any printed dimensions/scale bar if ' +
-          'present; otherwise estimate from typical door widths around 0.9m and room sizes). Use a consistent ' +
-          'top-down x/z coordinate system with (0,0) near a corner of the plan. Respond only with the structured ' +
-          'data described by the schema.',
-      },
-      { inlineData: { data: imageBase64, mimeType: mediaType } },
-    ],
-    config: {
-      responseMimeType: 'application/json',
-      responseJsonSchema: FLOOR_PLAN_JSON_SCHEMA,
-    },
-  });
+  let response;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      response = await ai.models.generateContent({
+        model: 'gemini-flash-latest',
+        contents: [
+          {
+            text:
+              'This is a top-down floor plan (a photo or scan of a drawn/printed plan). Extract its geometry: ' +
+              'every wall as a line segment, every door as a point, every staircase and large fixed obstacle as a ' +
+              'bounding box. Pick a sensible real-world scale in meters (use any printed dimensions/scale bar if ' +
+              'present; otherwise estimate from typical door widths around 0.9m and room sizes). Use a consistent ' +
+              'top-down x/z coordinate system with (0,0) near a corner of the plan. Respond only with the structured ' +
+              'data described by the schema.',
+          },
+          { inlineData: { data: imageBase64, mimeType: mediaType } },
+        ],
+        config: {
+          responseMimeType: 'application/json',
+          responseJsonSchema: FLOOR_PLAN_JSON_SCHEMA,
+        },
+      });
+      break;
+    } catch (err) {
+      const isLastAttempt = attempt === MAX_ATTEMPTS;
+      if (!isRetryable(err) || isLastAttempt) {
+        throw err;
+      }
+      const delay = BASE_DELAY_MS * 2 ** (attempt - 1);
+      console.warn(
+        `Gemini request failed (attempt ${attempt}/${MAX_ATTEMPTS}, status ${
+          err instanceof ApiError ? err.status : '?'
+        }), retrying in ${delay}ms...`
+      );
+      await sleep(delay);
+    }
+  }
 
-  const text = response.text;
+  const text = response!.text;
   if (!text) {
     throw new Error('No structured floor plan data was returned.');
   }
