@@ -1,11 +1,11 @@
-# Project Handoff — Accessible Workplace Twin
+# Project Handoff — Creel (Accessible Workplace Twin)
 
 Context for picking up this project in a fresh Claude Code session. Read this
 first, then explore the code as needed.
 
 ## What this is
 
-Hackathon project (Track: Accessible Workplace Twin). B2B product idea: help
+Hackathon project (Track: Accessible Workplace Twin), product name **Creel**. B2B product idea: help
 companies find and fix accessibility gaps in their workplace for disabled
 employees. Flow: get a representation of the workplace in 3D → flag
 accessibility issues for a chosen disability type → show recommended fixes in

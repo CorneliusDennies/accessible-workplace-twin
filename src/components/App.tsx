@@ -135,7 +135,7 @@ function App() {
         )}
       </div>
       <div className="sidebar">
-        <h1>Accessible Workplace Twin</h1>
+        <h1>Creel</h1>
         <FloorPlanUpload
           onParsed={(data) => {
             setPendingImport(data);

@@ -10,7 +10,7 @@ import { IconChat, IconMenu, IconPlus, IconVideo } from './icons';
 import type { Conversation, Turn } from './types';
 import './chat.css';
 
-const PRODUCT_NAME = 'Workplace Twin';
+const PRODUCT_NAME = 'Creel';
 const STORAGE_KEY = 'workplace-twin.chats.v1';
 const SCAN_KEY = 'workplace-twin.scan';
 
@@ -326,7 +326,7 @@ export function ChatApp() {
             <IconMenu size={20} />
           </button>
           <span className="topbar-title">{chat?.title ?? 'New design'}</span>
-          <span className="model-pill">Gemini</span>
+          <span className="model-pill">Creel Agent</span>
         </header>
 
         {chat ? (

@@ -1,7 +1,7 @@
 import { OfficeViewer } from './OfficeViewer';
 import './planner.css';
 
-const PRODUCT_NAME = 'Workplace Twin';
+const PRODUCT_NAME = 'Creel';
 const DEMO_GLB_URL = '/demo/demo-office.glb';
 
 // ?glb=/demo/worldlabs-test.glb swaps in another model, e.g. a fresh World Labs export.
