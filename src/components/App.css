@@ -8,6 +8,92 @@
 .app .scene-panel {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.scene-toolbar {
+  padding: 8px;
+  background: #111;
+}
+
+.scene-toolbar button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: #222;
+  color: #eee;
+  border-radius: 4px;
+}
+
+.room-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0d0e12;
+  color: #eee;
+}
+
+.room-editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #111;
+  flex-wrap: wrap;
+}
+
+.room-editor-toolbar button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: #222;
+  color: #eee;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.room-editor-toolbar button.active {
+  background: #f2c230;
+  color: #16171d;
+  border-color: #f2c230;
+}
+
+.room-editor-hint {
+  font-size: 12px;
+  color: #aaa;
+  margin-left: 8px;
+}
+
+.room-editor-canvas {
+  background: #16171d;
+  touch-action: none;
+  cursor: crosshair;
+  max-width: 100%;
+  height: auto;
+}
+
+.room-editor-actions {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #111;
+}
+
+.room-editor-actions button {
+  padding: 8px 14px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: #222;
+  color: #eee;
+  border-radius: 4px;
+}
+
+.room-editor-actions button.primary {
+  background: #f2c230;
+  color: #16171d;
+  border-color: #f2c230;
 }
 
 .app .sidebar {
