@@ -39,7 +39,7 @@ export function FloorPlanUpload({ onParsed }: FloorPlanUploadProps) {
     <div className="scan-upload">
       <h2>Import a floor plan</h2>
       <p className="scan-hint">
-        Upload a photo or scan of an existing floor plan — Claude reads it and builds an editable layout you can
+        Upload a photo or scan of an existing floor plan — AI reads it and builds an editable layout you can
         review before applying.
       </p>
 
