@@ -1,0 +1,396 @@
+{
+  "units": "meters",
+  "room": {
+    "width": 10,
+    "depth": 8,
+    "wall_height": 2.6
+  },
+  "rooms": [
+    {
+      "id": "living_room",
+      "name": "Living Room",
+      "x0": 0,
+      "z0": 0,
+      "x1": 5,
+      "z1": 5
+    },
+    {
+      "id": "dining_room",
+      "name": "Dining Room",
+      "x0": 5,
+      "z0": 0,
+      "x1": 10,
+      "z1": 4
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "x0": 7,
+      "z0": 4,
+      "x1": 10,
+      "z1": 8
+    },
+    {
+      "id": "hallway",
+      "name": "Hallway",
+      "x0": 5,
+      "z0": 4,
+      "x1": 7,
+      "z1": 7
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "x0": 0,
+      "z0": 5,
+      "x1": 5,
+      "z1": 8
+    },
+    {
+      "id": "laundry_closet",
+      "name": "Laundry Closet",
+      "x0": 5,
+      "z0": 7,
+      "x1": 7,
+      "z1": 8
+    }
+  ],
+  "walls": [
+    {
+      "id": "wall_1",
+      "x0": 5,
+      "z0": 0,
+      "x1": 5,
+      "z1": 5
+    },
+    {
+      "id": "wall_2",
+      "x0": 0,
+      "z0": 5,
+      "x1": 5,
+      "z1": 5
+    },
+    {
+      "id": "wall_3",
+      "x0": 5,
+      "z0": 4,
+      "x1": 10,
+      "z1": 4
+    },
+    {
+      "id": "wall_4",
+      "x0": 7,
+      "z0": 4,
+      "x1": 7,
+      "z1": 8
+    },
+    {
+      "id": "wall_5",
+      "x0": 5,
+      "z0": 5,
+      "x1": 5,
+      "z1": 8
+    },
+    {
+      "id": "wall_6",
+      "x0": 5,
+      "z0": 7,
+      "x1": 7,
+      "z1": 7
+    }
+  ],
+  "objects": [
+    {
+      "id": "entrance",
+      "type": "door",
+      "label": "front door",
+      "x": 3,
+      "z": 0,
+      "width": 0.9,
+      "height": 2.05
+    },
+    {
+      "id": "door_2",
+      "type": "door",
+      "label": "sliding patio door with vertical blinds",
+      "x": 0,
+      "z": 2.5,
+      "width": 2,
+      "height": 2.1,
+      "sill": 0
+    },
+    {
+      "id": "window_3",
+      "type": "window",
+      "label": "dining room window / possible slider",
+      "x": 10,
+      "z": 2,
+      "width": 1.8,
+      "height": 1.4,
+      "sill": 0.6
+    },
+    {
+      "id": "window_4",
+      "type": "window",
+      "label": "bedroom window (inferred)",
+      "x": 2.5,
+      "z": 8,
+      "width": 1.2,
+      "height": 1.2,
+      "sill": 0.9
+    },
+    {
+      "id": "door_5",
+      "type": "door",
+      "label": "open archway between living and dining",
+      "x": 5,
+      "z": 2,
+      "width": 1.4,
+      "height": 2.1
+    },
+    {
+      "id": "door_6",
+      "type": "door",
+      "label": "opening from dining into hallway",
+      "x": 6,
+      "z": 4,
+      "width": 1,
+      "height": 2.1
+    },
+    {
+      "id": "door_7",
+      "type": "door",
+      "label": "pass-through / opening into kitchen",
+      "x": 8.5,
+      "z": 4,
+      "width": 1.2,
+      "height": 2.1
+    },
+    {
+      "id": "door_8",
+      "type": "door",
+      "label": "secondary opening to kitchen",
+      "x": 7,
+      "z": 5,
+      "width": 0.9,
+      "height": 2.1
+    },
+    {
+      "id": "door_9",
+      "type": "door",
+      "label": "bedroom door",
+      "x": 5,
+      "z": 6,
+      "width": 0.9,
+      "height": 2.1
+    },
+    {
+      "id": "door_10",
+      "type": "door",
+      "label": "closet opening for stacked washer/dryer",
+      "x": 6,
+      "z": 7,
+      "width": 1.4,
+      "height": 2.1
+    },
+    {
+      "id": "sofa_11",
+      "type": "sofa",
+      "label": "sofa",
+      "x": 2.2,
+      "z": 3.6,
+      "w": 2.4,
+      "d": 0.9,
+      "height": 0.85
+    },
+    {
+      "id": "table_12",
+      "type": "table",
+      "label": "small coffee table / basket",
+      "x": 2.4,
+      "z": 2.4,
+      "w": 0.6,
+      "d": 0.6,
+      "height": 0.45
+    },
+    {
+      "id": "cabinet_13",
+      "type": "cabinet",
+      "label": "low TV media console, wall-mounted TV above",
+      "x": 4.7,
+      "z": 2.8,
+      "w": 0.5,
+      "d": 1.8,
+      "height": 0.5
+    },
+    {
+      "id": "shelf_14",
+      "type": "shelf",
+      "label": "tall narrow storage cabinet",
+      "x": 4.7,
+      "z": 0.6,
+      "w": 0.5,
+      "d": 0.5,
+      "top_height": 1.8
+    },
+    {
+      "id": "other_15",
+      "type": "other",
+      "label": "exercise bike / peloton",
+      "x": 3.6,
+      "z": 4.4,
+      "w": 0.6,
+      "d": 1,
+      "height": 1.2
+    },
+    {
+      "id": "other_16",
+      "type": "other",
+      "label": "standing coat rack by front door",
+      "x": 4.3,
+      "z": 0.6,
+      "w": 0.5,
+      "d": 0.5,
+      "height": 1.9
+    },
+    {
+      "id": "table_17",
+      "type": "table",
+      "label": "dining table with 4 wire-frame chairs tucked around",
+      "x": 7.5,
+      "z": 2.4,
+      "w": 1.4,
+      "d": 1,
+      "height": 0.74
+    },
+    {
+      "id": "counter_18",
+      "type": "counter",
+      "label": "east counter run: sink + dishwasher + microwave on counter",
+      "x": 9.7,
+      "z": 6,
+      "w": 0.6,
+      "d": 3.6,
+      "height": 0.9
+    },
+    {
+      "id": "counter_19",
+      "type": "counter",
+      "label": "west counter run with electric stove",
+      "x": 7.3,
+      "z": 6.5,
+      "w": 0.6,
+      "d": 2.6,
+      "height": 0.9
+    },
+    {
+      "id": "cabinet_20",
+      "type": "cabinet",
+      "label": "stainless fridge",
+      "x": 7.35,
+      "z": 4.4,
+      "w": 0.7,
+      "d": 0.7,
+      "height": 1.7
+    },
+    {
+      "id": "cabinet_21",
+      "type": "cabinet",
+      "label": "top-load washer",
+      "x": 6,
+      "z": 7.5,
+      "w": 0.6,
+      "d": 0.6,
+      "height": 1
+    },
+    {
+      "id": "cabinet_22",
+      "type": "cabinet",
+      "label": "stacked dryer unit above",
+      "x": 6.6,
+      "z": 7.5,
+      "w": 0.6,
+      "d": 0.6,
+      "height": 1.8
+    },
+    {
+      "id": "bed_23",
+      "type": "bed",
+      "label": "queen-ish bed, head to west wall",
+      "x": 1.1,
+      "z": 6.5,
+      "w": 1.5,
+      "d": 2,
+      "height": 0.55
+    },
+    {
+      "id": "desk_24",
+      "type": "desk",
+      "label": "desk with monitor and lamp",
+      "x": 3.3,
+      "z": 5.4,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.74
+    },
+    {
+      "id": "chair_25",
+      "type": "chair",
+      "label": "office chair at desk",
+      "x": 3.3,
+      "z": 6.2,
+      "w": 0.55,
+      "d": 0.55,
+      "height": 0.9
+    },
+    {
+      "id": "shelf_26",
+      "type": "shelf",
+      "label": "open closet / hanging rack with clothes",
+      "x": 4.6,
+      "z": 5.5,
+      "w": 0.6,
+      "d": 0.6,
+      "top_height": 2
+    },
+    {
+      "id": "audio_alert_27",
+      "type": "audio_alert",
+      "label": "smoke detector on ceiling near entry (approx)",
+      "x": 2.5,
+      "z": 0.1,
+      "w": 0.12,
+      "d": 0.05,
+      "height": 2.3
+    }
+  ],
+  "walkways": [
+    {
+      "from": "entrance",
+      "to": "living_room_center",
+      "min_width": 0.9
+    },
+    {
+      "from": "entrance",
+      "to": "dining_table",
+      "min_width": 0.9
+    },
+    {
+      "from": "entrance",
+      "to": "kitchen",
+      "min_width": 0.9
+    },
+    {
+      "from": "entrance",
+      "to": "bedroom_door",
+      "min_width": 0.9
+    },
+    {
+      "from": "entrance",
+      "to": "bedroom_desk",
+      "min_width": 0.9
+    }
+  ],
+  "notes": "Single-level small apartment. Living room has front door (north) and a sliding patio door with vertical blinds (west). Open flow from living into dining through a wide archway; dining connects to a galley kitchen (east) via a pass-through, and a short hallway (south of dining) leads to the bedroom and a stacked washer/dryer closet. No bathroom was visible in the video, so none is modeled — likely accessed off the bedroom or the hallway but not shown. Dining-room east wall shows vertical blinds that could be either a window or a second slider; modeled as a window. Room dimensions and exact doorway positions are estimated from furniture scale (interior doors ≈0.85m, counters ≈0.9m high, dining table ≈0.74m). Coat rack and smoke detector positions approximate.",
+  "source": "Claude Code (opus) from 1 frames of WhatsApp Video 2026-10-10 at 02.36.23.mp4"
+}

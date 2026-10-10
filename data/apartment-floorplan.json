@@ -1,0 +1,49 @@
+{
+  "units": "meters",
+  "source": "Estimated by Claude from 19 frames (1/s) of 'WhatsApp Video 2026-10-10 at 02.36.23.mp4'. Whole apartment: living, dining, galley kitchen, laundry closet, bedroom. Positions are eyeballed, ±20-30%.",
+  "room": { "width": 8.5, "depth": 8.0, "wall_height": 2.6 },
+  "rooms": [
+    { "id": "living", "name": "Living room", "x0": 0, "z0": 0, "x1": 8.5, "z1": 4.2 },
+    { "id": "dining", "name": "Dining", "x0": 0, "z0": 4.2, "x1": 3.0, "z1": 8.0 },
+    { "id": "kitchen", "name": "Kitchen", "x0": 3.0, "z0": 4.2, "x1": 5.2, "z1": 8.0 },
+    { "id": "bedroom", "name": "Bedroom", "x0": 5.2, "z0": 4.2, "x1": 8.5, "z1": 8.0 }
+  ],
+  "walls": [
+    { "id": "wall_living_kitchen", "x0": 3.0, "z0": 4.2, "x1": 5.2, "z1": 4.2 },
+    { "id": "wall_living_bedroom", "x0": 5.2, "z0": 4.2, "x1": 8.5, "z1": 4.2 },
+    { "id": "wall_dining_kitchen", "x0": 3.0, "z0": 4.2, "x1": 3.0, "z1": 8.0 },
+    { "id": "wall_kitchen_bedroom", "x0": 5.2, "z0": 4.2, "x1": 5.2, "z1": 8.0 }
+  ],
+  "objects": [
+    { "id": "entrance", "type": "door", "label": "front door", "x": 0.0, "z": 1.5, "width": 0.9 },
+    { "id": "kitchen_opening", "type": "door", "label": "opening from dining into kitchen", "x": 3.0, "z": 5.6, "width": 1.2 },
+    { "id": "bedroom_door", "type": "door", "label": "bedroom doorway", "x": 6.2, "z": 4.2, "width": 0.8 },
+
+    { "id": "sliding_door", "type": "window", "label": "sliding glass door with vertical blinds", "x": 0.0, "z": 4.6, "width": 1.8, "height": 2.1, "sill": 0 },
+    { "id": "window_curtain", "type": "window", "label": "window with white curtains", "x": 3.2, "z": 0.0, "width": 1.6, "height": 2.1 },
+    { "id": "bedroom_window", "type": "window", "label": "bedroom window", "x": 8.5, "z": 6.2, "width": 1.4, "height": 2.0 },
+
+    { "id": "coat_rack", "type": "coat_rack", "label": "coat rack", "x": 0.35, "z": 2.6, "w": 0.5, "d": 0.5, "height": 1.8 },
+    { "id": "sofa", "type": "sofa", "label": "grey sofa", "x": 3.0, "z": 0.55, "w": 2.2, "d": 0.9, "height": 0.85 },
+    { "id": "coffee_table", "type": "table", "label": "round coffee tables", "x": 3.6, "z": 1.7, "w": 0.7, "d": 0.7, "height": 0.45 },
+    { "id": "tv_stand", "type": "cabinet", "label": "TV stand with TV", "x": 7.5, "z": 3.95, "w": 1.6, "d": 0.45, "height": 0.5 },
+    { "id": "tall_cabinet", "type": "shelf", "label": "tall wooden cabinet", "x": 6.85, "z": 3.98, "w": 0.45, "d": 0.4, "top_height": 1.8 },
+    { "id": "laundry", "type": "cabinet", "label": "laundry closet (stacked washer/dryer)", "x": 5.6, "z": 3.85, "w": 0.75, "d": 0.7, "height": 1.9 },
+
+    { "id": "dining_table", "type": "table", "label": "round dining table, 4 chairs", "x": 1.5, "z": 5.8, "w": 1.0, "d": 1.0, "height": 0.74 },
+
+    { "id": "fridge", "type": "cabinet", "label": "fridge", "x": 3.4, "z": 7.6, "w": 0.75, "d": 0.7, "height": 1.75 },
+    { "id": "stove", "type": "counter", "label": "stove and counter", "x": 3.35, "z": 6.4, "w": 0.65, "d": 1.6, "height": 0.9 },
+    { "id": "sink_counter", "type": "counter", "label": "sink, dishwasher and counter", "x": 4.85, "z": 6.1, "w": 0.65, "d": 3.4, "height": 0.9 },
+
+    { "id": "bed", "type": "bed", "label": "bed", "x": 7.4, "z": 6.4, "w": 1.5, "d": 2.0, "height": 0.55 },
+    { "id": "nightstand", "type": "cabinet", "label": "nightstand with lamp", "x": 8.2, "z": 5.0, "w": 0.45, "d": 0.4, "height": 0.6 },
+    { "id": "bedroom_desk", "type": "desk", "label": "desk with monitor", "x": 6.0, "z": 7.65, "w": 1.3, "d": 0.6, "height": 0.75 },
+    { "id": "clothes_rack", "type": "shelf", "label": "clothes rack", "x": 5.5, "z": 5.4, "w": 0.45, "d": 1.0, "top_height": 1.7 }
+  ],
+  "walkways": [
+    { "from": "entrance", "to": "dining_table", "min_width": 0.9 },
+    { "from": "entrance", "to": "bedroom_door", "min_width": 0.9 },
+    { "from": "bedroom_door", "to": "bedroom_desk", "min_width": 0.9 }
+  ]
+}

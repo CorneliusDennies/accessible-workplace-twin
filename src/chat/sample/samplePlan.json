@@ -1,0 +1,448 @@
+{
+ "problem": "We're designing for Sarah, a software engineer who uses a wheelchair. She starts next month and will work here full time.",
+ "needs": [
+  "wheelchair"
+ ],
+ "summary": "SAMPLE — Sarah needs a 36in route, a 60in turning circle, and everything within seated reach. The three options trade route length, team proximity, and cost.",
+ "designs": [
+  {
+   "name": "Entrance-side workstation",
+   "tagline": "Shortest, simplest route from the door to Sarah’s desk.",
+   "workstation": {
+    "x": 2.5,
+    "z": 2.8
+   },
+   "pros": [
+    "Shortest accessible route in the office",
+    "Automatic door removes the heaviest daily barrier",
+    "Everything she needs daily is within seated reach"
+   ],
+   "cons": [
+    "Sits away from the rest of the team",
+    "Longest trip to the meeting table and kitchenette"
+   ],
+   "best_for": [
+    "Heads-down focus work",
+    "Frequent trips in and out of the office"
+   ],
+   "placements": [
+    {
+     "product_id": "sit-stand-desk",
+     "x": 2.5,
+     "z": 2,
+     "rotation_deg": 0,
+     "target_object_id": "desk_1",
+     "reason": "Moves desk_1 next to the entrance and lowers it to Sarah’s chair height."
+    },
+    {
+     "product_id": "low-reach-storage",
+     "x": 3.7,
+     "z": 2,
+     "rotation_deg": 0,
+     "target_object_id": null,
+     "reason": "Keeps files within the 15–48in reach range beside her desk."
+    },
+    {
+     "product_id": "auto-door-opener",
+     "x": 0,
+     "z": 4,
+     "rotation_deg": 0,
+     "target_object_id": "entrance",
+     "reason": "Touchless entry so she never wrestles a heavy door."
+    }
+   ],
+   "id": "A",
+   "report": {
+    "ok": true,
+    "errors": [],
+    "placements": [
+     {
+      "product_id": "sit-stand-desk",
+      "x": 2.5,
+      "z": 2,
+      "rotation_deg": 0,
+      "target_object_id": "desk_1",
+      "reason": "Moves desk_1 next to the entrance and lowers it to Sarah’s chair height.",
+      "product_name": "Electric height-adjustable desk (65–125 cm)",
+      "mount": "floor",
+      "unit_cost": 650,
+      "replaces_object_id": "desk_1",
+      "y": 0,
+      "size": {
+       "w": 1.6,
+       "d": 0.8,
+       "h": 0.75
+      }
+     },
+     {
+      "product_id": "low-reach-storage",
+      "x": 3.7,
+      "z": 2,
+      "rotation_deg": 0,
+      "target_object_id": null,
+      "reason": "Keeps files within the 15–48in reach range beside her desk.",
+      "product_name": "Low-reach rolling storage pedestal",
+      "mount": "floor",
+      "unit_cost": 320,
+      "replaces_object_id": null,
+      "y": 0,
+      "size": {
+       "w": 0.5,
+       "d": 0.6,
+       "h": 0.7
+      }
+     },
+     {
+      "product_id": "auto-door-opener",
+      "x": 0,
+      "z": 4,
+      "rotation_deg": 0,
+      "target_object_id": "entrance",
+      "reason": "Touchless entry so she never wrestles a heavy door.",
+      "product_name": "Automatic door operator with wave sensor",
+      "mount": "door",
+      "unit_cost": 1800,
+      "replaces_object_id": null,
+      "y": 2,
+      "size": {
+       "w": 0.15,
+       "d": 0.6,
+       "h": 0.12
+      }
+     }
+    ],
+    "workstation": {
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "metrics": {
+      "route_from_entrance_m": 2.3,
+      "turning_space": true,
+      "desk_id": "desk_1",
+      "walk_to_m": {
+       "entrance": 2.3,
+       "meeting_table": 8,
+       "shelf_1": 8.3,
+       "kitchenette": 8.5
+      },
+      "route_path": [
+       [
+        0.55,
+        3.95
+       ],
+       [
+        0.85,
+        3.95
+       ],
+       [
+        1.15,
+        3.65
+       ],
+       [
+        1.75,
+        3.65
+       ],
+       [
+        2.45,
+        2.95
+       ]
+      ]
+     }
+    },
+    "total_cost": 2770
+   }
+  },
+  {
+   "name": "Team cluster",
+   "tagline": "Keeps Sarah at the heart of the team with a protected 36in lane.",
+   "workstation": {
+    "x": 5,
+    "z": 2.8
+   },
+   "pros": [
+    "Sits with the team she works with every day",
+    "Floor lane keeps her route clear as furniture moves",
+    "Lowest cost of the three"
+   ],
+   "cons": [
+    "Route depends on the lane staying clear",
+    "High shelf still needs the lift to be useful"
+   ],
+   "best_for": [
+    "Collaborative, pair-programming teams",
+    "Tight renovation budgets"
+   ],
+   "placements": [
+    {
+     "product_id": "sit-stand-desk",
+     "x": 5,
+     "z": 2,
+     "rotation_deg": 0,
+     "target_object_id": "desk_1",
+     "reason": "Swaps desk_1 in place for a height-adjustable desk."
+    },
+    {
+     "product_id": "route-floor-marking",
+     "x": 2.3,
+     "z": 3.3,
+     "rotation_deg": 90,
+     "target_object_id": null,
+     "reason": "Marks the 36in lane from the entrance so it stays furniture-free."
+    },
+    {
+     "product_id": "pull-down-shelf-lift",
+     "x": 10,
+     "z": 0.1,
+     "rotation_deg": 0,
+     "target_object_id": null,
+     "reason": "Brings the 1.8m shelf down to seated reach."
+    }
+   ],
+   "id": "B",
+   "report": {
+    "ok": true,
+    "errors": [],
+    "placements": [
+     {
+      "product_id": "sit-stand-desk",
+      "x": 5,
+      "z": 2,
+      "rotation_deg": 0,
+      "target_object_id": "desk_1",
+      "reason": "Swaps desk_1 in place for a height-adjustable desk.",
+      "product_name": "Electric height-adjustable desk (65–125 cm)",
+      "mount": "floor",
+      "unit_cost": 650,
+      "replaces_object_id": "desk_1",
+      "y": 0,
+      "size": {
+       "w": 1.6,
+       "d": 0.8,
+       "h": 0.75
+      }
+     },
+     {
+      "product_id": "route-floor-marking",
+      "x": 2.3,
+      "z": 3.3,
+      "rotation_deg": 90,
+      "target_object_id": null,
+      "reason": "Marks the 36in lane from the entrance so it stays furniture-free.",
+      "product_name": "Clear-route floor marking (36in lane)",
+      "mount": "floor_flat",
+      "unit_cost": 90,
+      "replaces_object_id": null,
+      "y": 0,
+      "size": {
+       "w": 3,
+       "d": 0.915,
+       "h": 0.005
+      }
+     },
+     {
+      "product_id": "pull-down-shelf-lift",
+      "x": 10,
+      "z": 0.03,
+      "rotation_deg": 0,
+      "target_object_id": null,
+      "reason": "Brings the 1.8m shelf down to seated reach.",
+      "product_name": "Motorized pull-down shelf lift",
+      "mount": "wall",
+      "unit_cost": 900,
+      "replaces_object_id": null,
+      "y": 1.4,
+      "size": {
+       "w": 0.25,
+       "d": 0.05,
+       "h": 0.2
+      }
+     }
+    ],
+    "workstation": {
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "metrics": {
+      "route_from_entrance_m": 4.8,
+      "turning_space": true,
+      "desk_id": "desk_1",
+      "walk_to_m": {
+       "entrance": 4.8,
+       "meeting_table": 5.5,
+       "shelf_1": 5.8,
+       "kitchenette": 6
+      },
+      "route_path": [
+       [
+        0.55,
+        3.95
+       ],
+       [
+        3.95,
+        3.95
+       ],
+       [
+        4.95,
+        2.95
+       ]
+      ]
+     }
+    },
+    "total_cost": 1640
+   }
+  },
+  {
+   "name": "Meeting-hub corner",
+   "tagline": "Puts Sarah beside the meeting table and a kitchenette she can use.",
+   "workstation": {
+    "x": 7.6,
+    "z": 6.8
+   },
+   "pros": [
+    "Shortest trip to meetings",
+    "Lowered counter makes the kitchenette usable from a chair",
+    "Quiet corner away from entrance traffic"
+   ],
+   "cons": [
+    "Highest cost",
+    "Longest route from the entrance"
+   ],
+   "best_for": [
+    "Roles with many meetings",
+    "Teams that eat and socialize together"
+   ],
+   "placements": [
+    {
+     "product_id": "sit-stand-desk",
+     "x": 7.6,
+     "z": 7.4,
+     "rotation_deg": 0,
+     "target_object_id": "desk_3",
+     "reason": "Moves desk_3 next to the meeting table and makes it adjustable."
+    },
+    {
+     "product_id": "accessible-counter",
+     "x": 11.55,
+     "z": 4.2,
+     "rotation_deg": 90,
+     "target_object_id": null,
+     "reason": "Adds a 34in counter section with knee space beside the kitchenette."
+    }
+   ],
+   "id": "C",
+   "report": {
+    "ok": true,
+    "errors": [],
+    "placements": [
+     {
+      "product_id": "sit-stand-desk",
+      "x": 7.6,
+      "z": 7.4,
+      "rotation_deg": 0,
+      "target_object_id": "desk_3",
+      "reason": "Moves desk_3 next to the meeting table and makes it adjustable.",
+      "product_name": "Electric height-adjustable desk (65–125 cm)",
+      "mount": "floor",
+      "unit_cost": 650,
+      "replaces_object_id": "desk_3",
+      "y": 0,
+      "size": {
+       "w": 1.6,
+       "d": 0.8,
+       "h": 0.75
+      }
+     },
+     {
+      "product_id": "accessible-counter",
+      "x": 11.55,
+      "z": 4.2,
+      "rotation_deg": 90,
+      "target_object_id": null,
+      "reason": "Adds a 34in counter section with knee space beside the kitchenette.",
+      "product_name": "Lowered kitchenette counter section with knee space",
+      "mount": "floor",
+      "unit_cost": 2400,
+      "replaces_object_id": null,
+      "y": 0,
+      "size": {
+       "w": 0.6,
+       "d": 0.9,
+       "h": 0.86
+      }
+     }
+    ],
+    "workstation": {
+     "ok": true,
+     "errors": [],
+     "warnings": [],
+     "metrics": {
+      "route_from_entrance_m": 8,
+      "turning_space": true,
+      "desk_id": "desk_3",
+      "walk_to_m": {
+       "entrance": 8,
+       "meeting_table": 3.5,
+       "shelf_1": 6.4,
+       "kitchenette": 5.3
+      },
+      "route_path": [
+       [
+        0.55,
+        3.95
+       ],
+       [
+        5.05,
+        3.95
+       ],
+       [
+        7.55,
+        6.45
+       ]
+      ]
+     }
+    },
+    "total_cost": 3050
+   }
+  }
+ ],
+ "events": [
+  {
+   "type": "tool",
+   "name": "audit_accessibility",
+   "ok": true,
+   "summary": "Audited for wheelchair: 6 issues"
+  },
+  {
+   "type": "tool",
+   "name": "search_products",
+   "ok": true,
+   "summary": "Found 7 products for wheelchair"
+  },
+  {
+   "type": "tool",
+   "name": "evaluate_workstation",
+   "ok": true,
+   "summary": "Seat (2.5, 2.8): reachable"
+  },
+  {
+   "type": "tool",
+   "name": "check_design",
+   "ok": false,
+   "summary": "Draft has 1 problem: placement 3 (sit-stand-desk): Blocks the door maneuvering clearance"
+  },
+  {
+   "type": "tool",
+   "name": "check_design",
+   "ok": true,
+   "summary": "Draft with sit-stand-desk, low-reach-storage, auto-door-opener passes"
+  },
+  {
+   "type": "tool",
+   "name": "submit_designs",
+   "ok": true,
+   "summary": "Accepted designs"
+  }
+ ],
+ "model": "sample",
+ "created_at": "2026-10-10T00:00:00.000Z"
+}

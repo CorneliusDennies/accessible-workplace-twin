@@ -1,0 +1,358 @@
+{
+  "units": "meters",
+  "room": {
+    "width": 14,
+    "depth": 9,
+    "wall_height": 2.7
+  },
+  "rooms": [
+    {
+      "id": "office_1",
+      "name": "Private office 1",
+      "x0": 0,
+      "z0": 0,
+      "x1": 4,
+      "z1": 4
+    },
+    {
+      "id": "office_2",
+      "name": "Private office 2",
+      "x0": 4,
+      "z0": 0,
+      "x1": 8,
+      "z1": 4
+    },
+    {
+      "id": "office_3",
+      "name": "Private office 3",
+      "x0": 8,
+      "z0": 0,
+      "x1": 11,
+      "z1": 4
+    },
+    {
+      "id": "conference",
+      "name": "Conference room",
+      "x0": 11,
+      "z0": 0,
+      "x1": 14,
+      "z1": 4
+    },
+    {
+      "id": "corridor",
+      "name": "Corridor",
+      "x0": 0,
+      "z0": 4,
+      "x1": 14,
+      "z1": 5.4
+    },
+    {
+      "id": "admin",
+      "name": "Reception & admin",
+      "x0": 0,
+      "z0": 5.4,
+      "x1": 8,
+      "z1": 9
+    },
+    {
+      "id": "breakroom",
+      "name": "Break room",
+      "x0": 8,
+      "z0": 5.4,
+      "x1": 11,
+      "z1": 9
+    },
+    {
+      "id": "copy_room",
+      "name": "Copy room",
+      "x0": 11,
+      "z0": 5.4,
+      "x1": 14,
+      "z1": 9
+    }
+  ],
+  "walls": [
+    {
+      "id": "wall_offices",
+      "x0": 0,
+      "z0": 4,
+      "x1": 14,
+      "z1": 4
+    },
+    {
+      "id": "wall_o1_o2",
+      "x0": 4,
+      "z0": 0,
+      "x1": 4,
+      "z1": 4
+    },
+    {
+      "id": "wall_o2_o3",
+      "x0": 8,
+      "z0": 0,
+      "x1": 8,
+      "z1": 4
+    },
+    {
+      "id": "wall_o3_conf",
+      "x0": 11,
+      "z0": 0,
+      "x1": 11,
+      "z1": 4
+    },
+    {
+      "id": "wall_south_rooms",
+      "x0": 8,
+      "z0": 5.4,
+      "x1": 14,
+      "z1": 5.4
+    },
+    {
+      "id": "wall_admin_break",
+      "x0": 8,
+      "z0": 5.4,
+      "x1": 8,
+      "z1": 9
+    },
+    {
+      "id": "wall_break_copy",
+      "x0": 11,
+      "z0": 5.4,
+      "x1": 11,
+      "z1": 9
+    }
+  ],
+  "objects": [
+    {
+      "id": "entrance",
+      "type": "door",
+      "label": "main entrance",
+      "x": 0.0,
+      "z": 4.7,
+      "width": 0.9
+    },
+    {
+      "id": "office_1_door",
+      "type": "door",
+      "label": "private office door",
+      "x": 2.0,
+      "z": 4.0,
+      "width": 0.76
+    },
+    {
+      "id": "office_2_door",
+      "type": "door",
+      "label": "private office door",
+      "x": 6.0,
+      "z": 4.0,
+      "width": 0.76
+    },
+    {
+      "id": "office_3_door",
+      "type": "door",
+      "label": "private office door",
+      "x": 9.5,
+      "z": 4.0,
+      "width": 0.76
+    },
+    {
+      "id": "conference_door",
+      "type": "door",
+      "label": "conference room door",
+      "x": 12.5,
+      "z": 4.0,
+      "width": 0.91
+    },
+    {
+      "id": "breakroom_door",
+      "type": "door",
+      "label": "break room door",
+      "x": 9.5,
+      "z": 5.4,
+      "width": 0.86
+    },
+    {
+      "id": "copy_room_door",
+      "type": "door",
+      "label": "copy room door",
+      "x": 12.5,
+      "z": 5.4,
+      "width": 0.8
+    },
+    {
+      "id": "desk_1",
+      "type": "desk",
+      "label": "executive desk",
+      "x": 2.0,
+      "z": 1.6,
+      "w": 1.6,
+      "d": 0.8,
+      "height": 0.75
+    },
+    {
+      "id": "desk_2",
+      "type": "desk",
+      "label": "executive desk",
+      "x": 6.0,
+      "z": 1.6,
+      "w": 1.6,
+      "d": 0.8,
+      "height": 0.75
+    },
+    {
+      "id": "desk_3",
+      "type": "desk",
+      "label": "executive desk",
+      "x": 9.5,
+      "z": 1.6,
+      "w": 1.5,
+      "d": 0.75,
+      "height": 0.75
+    },
+    {
+      "id": "conference_table",
+      "type": "table",
+      "label": "conference table",
+      "x": 12.5,
+      "z": 1.8,
+      "w": 1.2,
+      "d": 2.4,
+      "height": 0.74
+    },
+    {
+      "id": "reception_counter",
+      "type": "counter",
+      "label": "reception counter",
+      "x": 1.6,
+      "z": 6.6,
+      "w": 2.2,
+      "d": 0.7,
+      "height": 1.07
+    },
+    {
+      "id": "desk_4",
+      "type": "desk",
+      "label": "workstation desk",
+      "x": 4.4,
+      "z": 6.9,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_5",
+      "type": "desk",
+      "label": "workstation desk",
+      "x": 6.0,
+      "z": 6.9,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_6",
+      "type": "desk",
+      "label": "workstation desk",
+      "x": 4.4,
+      "z": 8.3,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_7",
+      "type": "desk",
+      "label": "workstation desk",
+      "x": 6.0,
+      "z": 8.3,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "corridor_cabinet",
+      "type": "cabinet",
+      "label": "filing cabinet in corridor",
+      "x": 7.2,
+      "z": 5.15,
+      "w": 0.9,
+      "d": 0.5,
+      "height": 1.3
+    },
+    {
+      "id": "break_counter",
+      "type": "counter",
+      "label": "break room counter and sink",
+      "x": 9.5,
+      "z": 8.65,
+      "w": 2.4,
+      "d": 0.6,
+      "height": 0.92
+    },
+    {
+      "id": "break_table",
+      "type": "table",
+      "label": "break table",
+      "x": 9.5,
+      "z": 6.9,
+      "w": 1.0,
+      "d": 1.0,
+      "height": 0.74
+    },
+    {
+      "id": "printer",
+      "type": "other",
+      "label": "large copier",
+      "x": 13.3,
+      "z": 7.0,
+      "w": 0.9,
+      "d": 0.7,
+      "height": 1.2
+    },
+    {
+      "id": "paper_shelf",
+      "type": "shelf",
+      "label": "paper storage shelving",
+      "x": 12.0,
+      "z": 8.75,
+      "w": 1.6,
+      "d": 0.4,
+      "top_height": 2.0
+    },
+    {
+      "id": "fire_alarm",
+      "type": "audio_alert",
+      "label": "fire alarm horn",
+      "x": 7.0,
+      "z": 0.05,
+      "height": 2.2
+    },
+    {
+      "id": "reception_bell",
+      "type": "audio_alert",
+      "label": "visitor chime",
+      "x": 0.05,
+      "z": 6.0,
+      "height": 1.5
+    }
+  ],
+  "walkways": [
+    {
+      "from": "entrance",
+      "to": "office_2_door",
+      "min_width": 0.85
+    },
+    {
+      "from": "entrance",
+      "to": "breakroom_door",
+      "min_width": 0.9
+    },
+    {
+      "from": "entrance",
+      "to": "desk_4",
+      "min_width": 1.0
+    }
+  ],
+  "notes": "Private office doors are 0.76 m; a filing cabinet narrows the 1.4 m corridor; reception counter is 1.07 m high; paper stored up to 2.0 m; alerts are audio only.",
+  "source": "Demo space for the pitch: hand-authored layout shown as a simulated scan (no video was analyzed)."
+}

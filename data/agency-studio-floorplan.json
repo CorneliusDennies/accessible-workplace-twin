@@ -1,0 +1,322 @@
+{
+  "units": "meters",
+  "room": {
+    "width": 18,
+    "depth": 12,
+    "wall_height": 3.2
+  },
+  "rooms": [
+    {
+      "id": "studio",
+      "name": "Studio",
+      "x0": 0,
+      "z0": 0,
+      "x1": 12,
+      "z1": 8
+    },
+    {
+      "id": "reception",
+      "name": "Reception",
+      "x0": 0,
+      "z0": 8,
+      "x1": 6,
+      "z1": 12
+    },
+    {
+      "id": "pod_1",
+      "name": "Meeting pod 1",
+      "x0": 12,
+      "z0": 0,
+      "x1": 15,
+      "z1": 4
+    },
+    {
+      "id": "pod_2",
+      "name": "Meeting pod 2",
+      "x0": 15,
+      "z0": 0,
+      "x1": 18,
+      "z1": 4
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen & lounge",
+      "x0": 12,
+      "z0": 4,
+      "x1": 18,
+      "z1": 12
+    }
+  ],
+  "walls": [
+    {
+      "id": "wall_reception_studio",
+      "x0": 0,
+      "z0": 8,
+      "x1": 6,
+      "z1": 8
+    },
+    {
+      "id": "wall_reception_east",
+      "x0": 6,
+      "z0": 8,
+      "x1": 6,
+      "z1": 12
+    },
+    {
+      "id": "wall_studio_pod1",
+      "x0": 12,
+      "z0": 0,
+      "x1": 12,
+      "z1": 4
+    },
+    {
+      "id": "wall_pod1_pod2",
+      "x0": 15,
+      "z0": 0,
+      "x1": 15,
+      "z1": 4
+    },
+    {
+      "id": "wall_pods_kitchen",
+      "x0": 12,
+      "z0": 4,
+      "x1": 18,
+      "z1": 4
+    }
+  ],
+  "objects": [
+    {
+      "id": "entrance",
+      "type": "door",
+      "label": "front doors",
+      "x": 3.0,
+      "z": 12.0,
+      "width": 1.0
+    },
+    {
+      "id": "studio_opening",
+      "type": "door",
+      "label": "opening from reception to studio",
+      "x": 3.0,
+      "z": 8.0,
+      "width": 1.6
+    },
+    {
+      "id": "pod_1_door",
+      "type": "door",
+      "label": "meeting pod door",
+      "x": 13.5,
+      "z": 4.0,
+      "width": 0.85
+    },
+    {
+      "id": "pod_2_door",
+      "type": "door",
+      "label": "meeting pod door",
+      "x": 16.5,
+      "z": 4.0,
+      "width": 0.78
+    },
+    {
+      "id": "window_n",
+      "type": "window",
+      "label": "window",
+      "x": 6.0,
+      "z": 0.0,
+      "width": 3.0,
+      "sill": 0.6
+    },
+    {
+      "id": "reception_desk",
+      "type": "counter",
+      "label": "reception desk",
+      "x": 3.0,
+      "z": 10.1,
+      "w": 2.4,
+      "d": 0.7,
+      "height": 1.1
+    },
+    {
+      "id": "waiting_sofa",
+      "type": "sofa",
+      "label": "waiting sofa",
+      "x": 5.0,
+      "z": 11.5,
+      "w": 1.8,
+      "d": 0.8
+    },
+    {
+      "id": "studio_table_1",
+      "type": "table",
+      "label": "shared studio table",
+      "x": 3.5,
+      "z": 2.6,
+      "w": 3.6,
+      "d": 1.0,
+      "height": 0.75
+    },
+    {
+      "id": "studio_table_2",
+      "type": "table",
+      "label": "shared studio table",
+      "x": 8.2,
+      "z": 2.6,
+      "w": 3.6,
+      "d": 1.0,
+      "height": 0.75
+    },
+    {
+      "id": "desk_1",
+      "type": "desk",
+      "label": "designer desk",
+      "x": 3.0,
+      "z": 6.2,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_2",
+      "type": "desk",
+      "label": "designer desk",
+      "x": 4.6,
+      "z": 6.2,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_3",
+      "type": "desk",
+      "label": "designer desk",
+      "x": 7.6,
+      "z": 6.2,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "desk_4",
+      "type": "desk",
+      "label": "designer desk",
+      "x": 9.2,
+      "z": 6.2,
+      "w": 1.4,
+      "d": 0.7,
+      "height": 0.75
+    },
+    {
+      "id": "material_library",
+      "type": "shelf",
+      "label": "material library shelving",
+      "x": 11.75,
+      "z": 6.0,
+      "w": 0.4,
+      "d": 2.2,
+      "top_height": 2.1
+    },
+    {
+      "id": "print_table",
+      "type": "table",
+      "label": "large-format print table",
+      "x": 1.1,
+      "z": 4.6,
+      "w": 1.0,
+      "d": 2.0,
+      "height": 0.95
+    },
+    {
+      "id": "pod_1_table",
+      "type": "table",
+      "label": "pod table",
+      "x": 13.5,
+      "z": 1.8,
+      "w": 1.2,
+      "d": 1.0,
+      "height": 0.74
+    },
+    {
+      "id": "pod_2_table",
+      "type": "table",
+      "label": "pod table",
+      "x": 16.5,
+      "z": 1.8,
+      "w": 1.2,
+      "d": 1.0,
+      "height": 0.74
+    },
+    {
+      "id": "kitchen_island",
+      "type": "counter",
+      "label": "kitchen island",
+      "x": 15.0,
+      "z": 8.2,
+      "w": 2.4,
+      "d": 1.0,
+      "height": 0.92
+    },
+    {
+      "id": "kitchen_wall_counter",
+      "type": "counter",
+      "label": "kitchen counter and sink",
+      "x": 17.7,
+      "z": 8.6,
+      "w": 0.6,
+      "d": 3.2,
+      "height": 0.92
+    },
+    {
+      "id": "bar_table",
+      "type": "table",
+      "label": "bar-height table",
+      "x": 14.6,
+      "z": 10.9,
+      "w": 1.8,
+      "d": 0.7,
+      "height": 1.07
+    },
+    {
+      "id": "fire_alarm",
+      "type": "audio_alert",
+      "label": "fire alarm horn",
+      "x": 8.0,
+      "z": 0.05,
+      "height": 2.2
+    },
+    {
+      "id": "doorbell",
+      "type": "audio_alert",
+      "label": "front door chime",
+      "x": 1.0,
+      "z": 11.95,
+      "height": 1.5
+    },
+    {
+      "id": "pod_booking_chime",
+      "type": "audio_alert",
+      "label": "room booking chime",
+      "x": 15.0,
+      "z": 3.95,
+      "height": 2.0
+    }
+  ],
+  "walkways": [
+    {
+      "from": "entrance",
+      "to": "studio_opening",
+      "min_width": 1.2
+    },
+    {
+      "from": "studio_opening",
+      "to": "desk_2",
+      "min_width": 1.0
+    },
+    {
+      "from": "studio_opening",
+      "to": "pod_2_door",
+      "min_width": 0.9
+    }
+  ],
+  "notes": "1.1 m reception desk; pod 2 door is 0.78 m; bar-height kitchen table; material library up to 2.1 m; three audio-only alerts.",
+  "source": "Demo space for the pitch: hand-authored layout shown as a simulated scan (no video was analyzed)."
+}

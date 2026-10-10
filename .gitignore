@@ -26,3 +26,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Video-to-3D test outputs (World Labs HQ mesh is >100MB — too big for GitHub)
+public/demo/worldlabs-test.glb
+public/demo/worldlabs-collider.glb
+public/demo/kiri-test.glb
