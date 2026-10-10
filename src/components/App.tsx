@@ -8,6 +8,7 @@ import { ModuleSelector } from './ModuleSelector';
 import { ViewToggle } from './ViewToggle';
 import { BillOfMaterials } from './BillOfMaterials';
 import { ScanUpload } from './ScanUpload';
+import { FloorPlanUpload } from './FloorPlanUpload';
 import { RoomEditor } from './RoomEditor';
 import { SCAN_API_BASE_URL } from '../config';
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
   const [showFixes, setShowFixes] = useState(false);
   const [officeData, setOfficeData] = useState<OfficeData>(sampleOffice);
   const [editingLayout, setEditingLayout] = useState(false);
+  const [pendingImport, setPendingImport] = useState<OfficeData | null>(null);
   const [scannedGlbUrl, setScannedGlbUrl] = useState<string | null>(() => {
     const serialize = new URLSearchParams(window.location.search).get('scan');
     return serialize ? `${SCAN_API_BASE_URL}/models/${serialize}.glb` : null;
@@ -40,11 +42,15 @@ function App() {
       <div className="scene-panel">
         {editingLayout ? (
           <RoomEditor
-            initialOfficeData={officeData}
-            onCancel={() => setEditingLayout(false)}
+            initialOfficeData={pendingImport ?? officeData}
+            onCancel={() => {
+              setPendingImport(null);
+              setEditingLayout(false);
+            }}
             onApply={(data) => {
               setOfficeData(data);
               setScannedGlbUrl(null);
+              setPendingImport(null);
               setEditingLayout(false);
             }}
           />
@@ -59,6 +65,12 @@ function App() {
       </div>
       <div className="sidebar">
         <h1>Accessible Workplace Twin</h1>
+        <FloorPlanUpload
+          onParsed={(data) => {
+            setPendingImport(data);
+            setEditingLayout(true);
+          }}
+        />
         <ScanUpload onScanReady={setScannedGlbUrl} />
         {scannedGlbUrl && (
           <p className="scan-note">
